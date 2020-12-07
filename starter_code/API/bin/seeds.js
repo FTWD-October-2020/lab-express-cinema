@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+const Movie = require('../models/Movie')
+
 const movies = [
     {
         title: "A Wrinkle in Time",
@@ -81,4 +84,11 @@ const movies = [
     },
 ];
 
-module.exports = movies;
+mongoose.connect('mongodb://localhost:27017/ClassLedDB')
+    .then(() => {
+        Movie.create(movies)
+        console.log('Connected to MongoDB!');
+    })
+    .catch(err => {
+        console.log(err);
+    })

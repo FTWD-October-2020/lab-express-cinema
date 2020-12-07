@@ -10,7 +10,7 @@ const cors = require("cors");
 
 
 mongoose
-  .connect("mongodb://localhost/starter-code", { useNewUrlParser: true })
+  .connect("mongodb://localhost/ClassLedDB", { useNewUrlParser: true })
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
