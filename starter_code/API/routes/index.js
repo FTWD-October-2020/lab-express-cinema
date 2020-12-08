@@ -11,4 +11,14 @@ router.get("/movies", (req, res) => {
     .catch(err => console.log(err))
 });
 
+router.get('/movies/:movieId', (req,res) => {
+  Movie.findById(req.params.movieId)
+  .then((movie) => {
+    res.json(movie)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+})
+
 module.exports = router;
