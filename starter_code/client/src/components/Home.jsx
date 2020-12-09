@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Home(props) {
   const [movies, setMovies] = useState(false);
@@ -16,7 +16,7 @@ export default function Home(props) {
     return (
       movies &&
       movies.map((movie) => {
-        return <Link to={`/movies/${movie._id}`}><h1>{movie.title}</h1></Link>
+        return <Link to={`/movies/detail/${movie._id}`}><h1>{movie.title}</h1></Link>
       })
     );
   }

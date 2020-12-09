@@ -11,14 +11,25 @@ router.get("/movies", (req, res) => {
     .catch(err => console.log(err))
 });
 
-router.get('/movies/:movieId', (req,res) => {
+router.get('/movies/:movieId', (req, res) => {
   Movie.findById(req.params.movieId)
-  .then((movie) => {
-    res.json(movie)
-  })
-  .catch(err => {
-    console.log(err)
-  })
+    .then((movie) => {
+      res.json(movie)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+})
+
+router.post('/movies/new', (req, res) => {
+  console.log("reached")
+  Movie.create(req.body)
+    .then((movie) => {
+      res.json(movie)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 })
 
 module.exports = router;

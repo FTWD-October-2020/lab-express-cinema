@@ -4,20 +4,20 @@ import axios from "axios";
 
 const MovieDetail = (props) => {
     console.log(props)
-    let [movie , setMovie] = useState({})
+    let [movie, setMovie] = useState({})
 
     useEffect(() => {
         axios.get(`http://localhost:5000/movies/${props.match.params.movieId}`)
-            .then((res) =>{
+            .then((res) => {
                 debugger
                 setMovie(res.data)
                 console.log(movie)
             })
-            .catch(err=>{
+            .catch(err => {
                 debugger
                 console.log(err)
             })
-    },[])
+    }, [])
 
     const listMovieDetails = () => {
         return (
@@ -30,7 +30,7 @@ const MovieDetail = (props) => {
 
     return (
         <div>
-           {listMovieDetails()} 
+            {listMovieDetails()}
         </div>
     );
 };
