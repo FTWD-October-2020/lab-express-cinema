@@ -32,4 +32,14 @@ router.post('/movies/new', (req, res) => {
     })
 })
 
+router.put('/movies/edit/:movieId', (req, res) => {
+  Movie.findByIdAndUpdate(req.params.movieId,req.body)
+    .then((movie) => {
+      res.json(movie)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+})
+
 module.exports = router;

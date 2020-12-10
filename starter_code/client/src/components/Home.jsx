@@ -16,8 +16,12 @@ export default function Home(props) {
     return (
       movies &&
       movies.map((movie) => {
-        return <Link to={`/movies/detail/${movie._id}`}><h1>{movie.title}</h1></Link>
-      })
+        return (
+        <div>
+        <Link to={`/movies/detail/${movie._id}`}><h1>{movie.title}</h1></Link>
+        <Link to={`/movies/edit/${movie._id}`}>Edit Movie</Link>
+        </div>
+      )})
     );
   }
 

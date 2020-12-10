@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import MovieDetail from './components/MovieDetail'
 import { Link, Route, Switch } from "react-router-dom"
 import CreateNewMovie from "./components/CreateNewMovie"
+import EditMovie from "./components/EditMovie"
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route exact path='/movies' render={(props) => <Home {...props} />} />
           <Route exact path='/movies/create' render={(props) => <CreateNewMovie {...props} />} />
           <Route exact path='/movies/detail/:movieId' render={(props) => <MovieDetail {...props} />} />
+          <Route exact path='/movies/edit/:movieId' render={(props) => <EditMovie {...props} />} />
         </Switch>
       </div>
 
